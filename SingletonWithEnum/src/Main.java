@@ -20,6 +20,8 @@ public class Main {
             }
         }).start();
 
+        
+
         /*
         OUTPUT:
         Thread 2 Hashcode of Lazy: 2135059911
