@@ -23,9 +23,25 @@ public class Stack {
         if (size == 0) {
             throw new IllegalStateException("Stack is empty");
         }
+        return stackArray[--size];
+        /*
+        bu kullanımda stackArray[size] değeri hala bellekte tutuluyor.
+        bu sadece size değerini azaltıyor.
+        en üstteki elemanı sanki yokmuş gibi davranıyor.
+         */
+    }
+
+    public Object popWell() {
+        if (size == 0) {
+            throw new IllegalStateException("Stack is empty");
+        }
         Object obj = stackArray[--size];
         stackArray[size] = null;
         return obj;
+        /*
+        burada ise stackArray[size] değerini null yapıyoruz.
+        garbage collector bu değeri bellekten temizleyebilir.
+         */
     }
 
     private void ensureCapacity() {
